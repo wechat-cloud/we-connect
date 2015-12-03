@@ -11,7 +11,7 @@ namespace WeConnect.Components.Material
         Task<TemporaryMediaCreationResut>       CreateTemporaryMediaAsync(FileDescription file);
         Task<NewsMaterialCreationResult>        CreateNewsMaterialAsync(NewsMaterialDescription newsMaterial);
         Task<NewsMaterialImageCreationResult>   CreateNewsMaterialImageAsync(FileDescription file);
-        Task<MaterialCreationResult>            CreateVideoMaterialAsync(FileDescription file, string title, string description);
+        Task<MaterialCreationResult>            CreateVideoMaterialAsync(FileDescription file, string title, string introduction);
         Task<MaterialCreationResult>            CreateVoiceMaterialAsync(FileDescription file);
         Task<MaterialCreationResult>            CreateImageMaterialAsync(FileDescription file);
 

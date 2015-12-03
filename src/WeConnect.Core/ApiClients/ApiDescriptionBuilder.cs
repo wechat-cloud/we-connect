@@ -9,49 +9,64 @@ namespace WeConnect.Core
 {
     public class ApiDescriptionBuilder
     {
+        private ApiDescription _apiDescription = new ApiDescription();
+        internal ApiDescriptionBuilder()
+        {
+
+        }
+
         internal ApiDescription Build()
         {
-            throw new NotImplementedException();
+            return _apiDescription;
         }
 
         public ApiDescriptionBuilder UseResource(string resource)
         {
-            throw new NotImplementedException();
+            return this;
         }
 
         public ApiDescriptionBuilder UseHttp()
         {
-            throw new NotImplementedException();
+            return this;
         }
 
         public ApiDescriptionBuilder UseHttps()
         {
-            throw new NotImplementedException();
+            return this;
+        }
+
+        public ApiDescriptionBuilder UseGet() {
+            return UseMethod(HttpMethod.Get);
+        }
+
+        public ApiDescriptionBuilder UsePost()
+        {
+            return UseMethod(HttpMethod.Post);
         }
 
         public ApiDescriptionBuilder UseMethod(HttpMethod post)
         {
-            throw new NotImplementedException();
+            return this;
         }
 
         public ApiDescriptionBuilder Body(object p)
         {
-            throw new NotImplementedException();
+            return this;
         }
 
         public ApiDescriptionBuilder Json<T>(T target)
         {
-            throw new NotImplementedException();
+            return this;
         }
 
         public ApiDescriptionBuilder UseParameter(string pKey, string pValue)
         {
-            throw new NotImplementedException();
+            return this;
         }
 
         public ApiDescriptionBuilder File(string key, string fileName, Stream fileStream)
         {
-            throw new NotImplementedException();
+            return this;
         }
     }
 }

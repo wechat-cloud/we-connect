@@ -7,26 +7,30 @@ namespace WeConnect.Core
 {
     public static class ApiClientExtension
     {
-        public static Task ExecuteAsync(this IApiClient client, Action<ApiDescriptionBuilder> builder)
+        public static Task ExecuteAsync(this IApiClient client, Func<ApiDescriptionBuilder, ApiDescriptionBuilder> builder)
+        {
+            var apiDescription = BuildApiDescription(builder);
+            return client.ExecuteAsync(apiDescription);
+        }
+
+        public static Task<T> ExecuteAndGetResultAsync<T>(this IApiClient client, Func<ApiDescriptionBuilder, ApiDescriptionBuilder> builder)
+        {
+            var apiDescription = BuildApiDescription(builder);
+            return client.ExecuteAndGetResultAsync<T>(apiDescription);
+        }
+
+        public static Task<FileDescription> ExecuteAndGetFileAsync(this IApiClient client, Func<ApiDescriptionBuilder, ApiDescriptionBuilder> builder)
+        {
+            var apiDescription = BuildApiDescription(builder);
+            return client.ExecuteAndGetFileAsync(apiDescription);
+        }
+
+        private static ApiDescription BuildApiDescription(Func<ApiDescriptionBuilder, ApiDescriptionBuilder> builder)
         {
             var apiDescriptionbuilder = new ApiDescriptionBuilder();
-            builder(apiDescriptionbuilder);
+            var apiDescription = builder(apiDescriptionbuilder).Build();
 
-            return client.ExecuteAsync(apiDescriptionbuilder.Build());
-        }
-
-        public static Task<T> ExecuteAndGetResultAsync<T>(this IApiClient client, Action<ApiDescriptionBuilder> builder) {
-            var apiDescriptionbuilder = new ApiDescriptionBuilder();
-            builder(apiDescriptionbuilder);
-
-            return client.ExecuteAndGetResultAsync<T>(apiDescriptionbuilder.Build());
-        }
-
-        public static Task<FileDescription> ExecuteAndGetFileAsync(this IApiClient client, Action<ApiDescriptionBuilder> builder) {
-            var apiDescriptionbuilder = new ApiDescriptionBuilder();
-            builder(apiDescriptionbuilder);
-
-            return client.ExecuteAndGetFileAsync(apiDescriptionbuilder.Build());
+            return apiDescription;
         }
     }
 }

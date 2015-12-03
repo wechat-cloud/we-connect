@@ -16,6 +16,11 @@ namespace WeConnect.Core
 
         public bool AutoAppendToken { get; set; } = true;
 
+        public Task<FileDescription> ExecuteAndGetFileAsync(ApiDescription apiDescription)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<T> ExecuteAsync<T>(ApiDescription apiDescription) {
             throw new NotImplementedException();
         }

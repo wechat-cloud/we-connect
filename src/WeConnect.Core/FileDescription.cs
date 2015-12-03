@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace WeConnect.Components.MediaManagement
+namespace WeConnect.Core
 {
     public class FileDescription
     {

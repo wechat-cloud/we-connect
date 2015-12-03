@@ -7,7 +7,7 @@ using Microsoft.Framework.DependencyInjection;
 
 namespace WeConnect.Components.MediaManagement
 {
-    public static class MediaManagementExtension
+    public static class MediaComponentExtension
     {
         public static IMediaComponent GetMediaManagementComponent(this IWechat kernel) {
             var component = kernel.ServiceResolver.GetRequiredService<IMediaComponent>();

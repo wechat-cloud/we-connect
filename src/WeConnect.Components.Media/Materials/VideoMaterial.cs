@@ -1,4 +1,4 @@
-﻿namespace WeConnect.Components.MediaManagement
+﻿namespace WeConnect.Components.Material
 {
     public class VideoMaterial
     {

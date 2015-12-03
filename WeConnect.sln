@@ -11,7 +11,7 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WeConnect.Tests", "tests\We
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WeConnect.Core.Tests", "tests\WeConnect.Core.Tests\WeConnect.Core.Tests.xproj", "{A060CD7C-928A-43F8-8D5F-A67EBFA0A7D1}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WeConnect.Components.MediaManagement", "src\WeConnect.Components.MediaManagement\WeConnect.Components.MediaManagement.xproj", "{2AE2947F-F8D1-41C5-8D93-97A271B80CC2}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WeConnect.Components.Material", "src\WeConnect.Components.Media\WeConnect.Components.Material.xproj", "{2AE2947F-F8D1-41C5-8D93-97A271B80CC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

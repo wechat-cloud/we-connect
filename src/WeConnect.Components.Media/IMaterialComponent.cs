@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using WeConnect.Core;
 
-namespace WeConnect.Components.MediaManagement
+namespace WeConnect.Components.Material
 {
-    public interface IMediaComponent
+    public interface IMaterialComponent
     {
         #region creation interfaces
 

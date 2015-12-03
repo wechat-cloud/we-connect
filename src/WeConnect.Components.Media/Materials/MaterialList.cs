@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WeConnect.Components.MediaManagement
+namespace WeConnect.Components.Material
 {
     public class MaterialList
     {

@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.Framework.DependencyInjection;
 using WeConnect.Core;
 
-namespace WeConnect.Components.MediaManagement
+namespace WeConnect.Components.Material
 {
-    public class MediaComponentInitializer : IComponentInitializer
+    public class MaterialComponentInitializer : IComponentInitializer
     {
         public Task InitializeWith(IServiceCollection serviceCollection)
         {
             return Task.Factory.StartNew(() =>
             {
-                serviceCollection.AddScoped<IMediaComponent, MediaComponent>();
+                serviceCollection.AddScoped<IMaterialComponent, MaterialComponent>();
             });
         }
     }

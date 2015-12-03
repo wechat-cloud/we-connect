@@ -22,16 +22,19 @@ namespace WeConnect.Core
 
         public ApiDescriptionBuilder UseResource(string resource)
         {
+            _apiDescription.Resource = resource;
             return this;
         }
 
         public ApiDescriptionBuilder UseHttp()
         {
+            _apiDescription.UseHttpProtocal();
             return this;
         }
 
         public ApiDescriptionBuilder UseHttps()
         {
+            _apiDescription.UseHttpsProtocal();
             return this;
         }
 
@@ -44,28 +47,33 @@ namespace WeConnect.Core
             return UseMethod(HttpMethod.Post);
         }
 
-        public ApiDescriptionBuilder UseMethod(HttpMethod post)
+        public ApiDescriptionBuilder UseMethod(HttpMethod method)
         {
+            _apiDescription.Method = method;
             return this;
         }
 
-        public ApiDescriptionBuilder Body(object p)
+        public ApiDescriptionBuilder Form(string pKey, string pValue)
         {
+            _apiDescription.FormKeyValues.Add(pKey, pValue);
             return this;
         }
 
         public ApiDescriptionBuilder Json<T>(T target)
         {
+            _apiDescription.SetJsonBody(target);
             return this;
         }
 
         public ApiDescriptionBuilder UseParameter(string pKey, string pValue)
         {
+            _apiDescription.QueryParameters.Add(pKey, pValue);
             return this;
         }
 
-        public ApiDescriptionBuilder File(string key, string fileName, Stream fileStream)
+        public ApiDescriptionBuilder AddFile(string key, FileDescription fileDescription)
         {
+            _apiDescription.Files.Add(key, fileDescription);
             return this;
         }
     }

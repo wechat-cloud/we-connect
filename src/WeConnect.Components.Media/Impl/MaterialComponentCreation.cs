@@ -14,7 +14,7 @@ namespace WeConnect.Components.Material
             return _apiClient.ExecuteAndGetResultAsync<TemporaryMediaCreationResut>(b =>
                 b.UseResource("/cgi-bin/media/upload")
                  .UseHttps()
-                 .File("media", file.FileName, file.FileStream)
+                 .AddFile("media", file)
             );
         }
 
@@ -31,19 +31,23 @@ namespace WeConnect.Components.Material
             return _apiClient.ExecuteAndGetResultAsync<NewsMaterialImageCreationResult>(b =>
                 b.UseResource("/cgi-bin/media/uploadimg")
                  .UseHttps()
-                 .File("media", file.FileName, file.FileStream)
+                 .AddFile("media", file)
             );
         }
 
         public Task<MaterialCreationResult> CreateVideoMaterialAsync(FileDescription file, string title, string introduction)
         {
-            var description = "{ \"title\": \"" + title + "\", \"introduction\": \"" + introduction + "\"}";
+            var description = _jsonSerializer.Serialize(new {
+                title = title,
+                introduction = introduction
+            });
+
             return _apiClient.ExecuteAndGetResultAsync<MaterialCreationResult>(b =>
                 b.UseResource("/cgi-bin/material/add_material")
                  .UseHttps()
                  .UseParameter("type", "video")
-                 .Body(new { description = description })
-                 .File("media", file.FileName, file.FileStream)
+                 .Form("description", description)
+                 .AddFile("media", file)
             );
         }
 
@@ -53,7 +57,7 @@ namespace WeConnect.Components.Material
                 b.UseResource("/cgi-bin/material/add_material")
                  .UseHttps()
                  .UseParameter("type", "voice")
-                 .File("media", file.FileName, file.FileStream)
+                 .AddFile("media", file)
             );
         }
 
@@ -63,7 +67,7 @@ namespace WeConnect.Components.Material
                 b.UseResource("/cgi-bin/media/upload")
                  .UseHttps()
                  .UseParameter("type", "image")
-                 .File("media", file.FileName, file.FileStream)
+                 .AddFile("media", file)
             );
         }
     }

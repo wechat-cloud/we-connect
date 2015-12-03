@@ -10,9 +10,12 @@ namespace WeConnect.Components.Material
     internal partial class MaterialComponent : IMaterialComponent
     {
         private readonly IApiClient _apiClient;
-        public MaterialComponent(IApiClient apiClient)
+        private readonly IJsonSerializer _jsonSerializer;
+
+        public MaterialComponent(IApiClient apiClient, IJsonSerializer jsonSerializer)
         {
             _apiClient = apiClient;
+            _jsonSerializer = jsonSerializer;
         }
 
         public Task DeleteMaterial(string mediaId)

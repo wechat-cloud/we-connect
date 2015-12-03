@@ -6,6 +6,6 @@ namespace WeConnect.Core
     {
         bool AutoAppendToken { get; set; }
 
-        Task<T> Execute<T>(string resource, object parames);
+        Task<T> ExecuteAsync<T>(ApiDescription apiDescription);
     }
 }

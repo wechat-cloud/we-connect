@@ -15,7 +15,7 @@ namespace WeConnect.Core
 
         public bool AutoAppendToken { get; set; } = true;
 
-        public Task<T> Execute<T>(string resource, object parames) {
+        public Task<T> ExecuteAsync<T>(ApiDescription apiDescription) {
             throw new NotImplementedException();
         }
     }

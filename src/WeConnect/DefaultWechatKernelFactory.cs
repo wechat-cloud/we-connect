@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace WeConnect
 {
-    public class DefaultWechatKernelFactory : IWechatKernelFactory
+    public class DefaultWechatKernelFactory : IWechatFactory
     {
         private static IServiceCollection InnerServiceCollection;
         static DefaultWechatKernelFactory() {
@@ -20,7 +20,7 @@ namespace WeConnect
             throw new NotImplementedException();
         }
 
-        public IWechatKernel CreateKernel(string appId, string appSecret)
+        public IWechat CreateKernel(string appId, string appSecret)
         {
             throw new NotImplementedException();
         }

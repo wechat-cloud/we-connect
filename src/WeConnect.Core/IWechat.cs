@@ -1,14 +1,15 @@
-﻿using System;
+﻿using Microsoft.Framework.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace WeConnect.Core
 {
-    public interface IWechatKernel
+    public interface IWechat
     {
         ITokenManager TokenManager { get; }
         IServiceProvider ServiceResolver { get; }
-        ILogFactory LogFactory { get; set; }
+        ILoggerFactory LogFactory { get; }
     }
 }

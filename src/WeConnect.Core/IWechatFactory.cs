@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace WeConnect.Core
 {
-    public interface IWechatKernelFactory
+    public interface IWechatFactory
     {
-        IWechatKernel CreateKernel(string appId, string appSecret);
+        IWechat CreateKernel(string appId, string appSecret);
     }
 }

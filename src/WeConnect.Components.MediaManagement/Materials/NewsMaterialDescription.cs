@@ -6,9 +6,9 @@ namespace WeConnect.Components.MediaManagement
     {
         public NewsMaterialDescription()
         {
-            Articles = new List<ArticleDescription>();
+            Articles = new List<Article>();
         }
 
-        public IList<ArticleDescription> Articles { get; }
+        public IList<Article> Articles { get; }
     }
 }

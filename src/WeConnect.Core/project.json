@@ -1,11 +1,10 @@
-﻿{
+{
   "version": "1.0.0-*",
   "description": "WeConnect.Core Class Library",
   "authors": [ "lurongkai" ],
   "tags": [ "" ],
   "projectUrl": "",
   "licenseUrl": "",
-
   "frameworks": {
     "dnxcore50": {
       "dependencies": {

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WeConnect.Components.MediaManagement
 {
-    public class ArticleDescription
+    public class Article
     {
         public string Title { get; set; }
         public string ThumbMediaId { get; set; }

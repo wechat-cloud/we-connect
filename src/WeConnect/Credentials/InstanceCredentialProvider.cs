@@ -8,16 +8,22 @@ namespace WeConnect
 {
     public class InstanceCredentialProvider : ICredentialProvider
     {
-        private readonly ApplicationCredential _credential;
+        private string _appId;
+        private string _appSecret;
+        public InstanceCredentialProvider()
+        {
+            
+        }
 
         public InstanceCredentialProvider(string appId, string appSecret)
         {
-            _credential = new ApplicationCredential(appId, appSecret);
+            _appId = appId;
+            _appSecret = appSecret;
         }
 
         public ApplicationCredential GenerateCredential()
         {
-            return _credential;
+            return new ApplicationCredential(_appId, _appSecret);
         }
     }
 }

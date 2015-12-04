@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace WeConnect
 {
-    public class DefaultJsonSerializer : IJsonSerializer
+    internal class DefaultJsonSerializer : IJsonSerializer
     {
         public string Serialize<T>(T target)
         {

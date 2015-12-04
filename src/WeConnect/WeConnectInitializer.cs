@@ -12,7 +12,9 @@ namespace WeConnect
         public Task InitializeWith(IServiceCollection serviceCollection)
         {
             return Task.Factory.StartNew(() => {
-
+                serviceCollection
+                    .AddScoped<IApiClient, DefaultApiClient>()
+                    .AddScoped<IJsonSerializer, DefaultJsonSerializer>();
             });
         }
     }

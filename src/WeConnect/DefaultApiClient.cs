@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WeConnect.Core
 {
-    public class DefaultApiClient : IApiClient
+    internal class DefaultApiClient : IApiClient
     {
         private readonly ITokenManager _tokenManager;
         public DefaultApiClient(ITokenManager tokenManager)

@@ -9,5 +9,6 @@ namespace WeConnect.Core
     {
         string Serialize<T>(T target);
         T Deserialize<T>(string source);
+        dynamic Deserialize(string source);
     }
 }

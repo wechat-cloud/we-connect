@@ -14,7 +14,8 @@ namespace WeConnect
             return Task.Factory.StartNew(() => {
                 serviceCollection
                     .AddScoped<IApiClient, DefaultApiClient>()
-                    .AddScoped<IJsonSerializer, DefaultJsonSerializer>();
+                    .AddScoped<IJsonSerializer, DefaultJsonSerializer>()
+                    .AddSingleton<ITokenManager, InMemoryTokenManager>();
             });
         }
     }
